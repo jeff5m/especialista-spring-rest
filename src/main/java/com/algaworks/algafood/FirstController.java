@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ControllerTest {
+public class FirstController {
 
     private final ClientActivationService clientActivationService;
 
-    public ControllerTest(ClientActivationService clientActivationService) {
+    public FirstController(ClientActivationService clientActivationService) {
         this.clientActivationService = clientActivationService;
     }
 
