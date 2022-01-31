@@ -5,21 +5,19 @@ import com.algaworks.algafood.di.notification.Notifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class ClientActivationService {
 
-    private final List<Notifier> notifiers;
+    private final Notifier notifier;
 
     @Autowired
-    public ClientActivationService(List<Notifier> notifiers) {
-        this.notifiers = notifiers;
+    public ClientActivationService(Notifier notifier) {
+        this.notifier = notifier;
     }
 
     public void activate(Client client) {
         client.activate();
-        this.notifiers.forEach(notifier -> notifier.notify(client, "Your registration is active!"));
+        this.notifier.notify(client, "Your registration is active!");
     }
 
 }

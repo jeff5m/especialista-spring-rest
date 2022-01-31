@@ -3,8 +3,10 @@ package com.algaworks.algafood.di.notification;
 import com.algaworks.algafood.di.model.Client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
+@Primary
 @Component
 public class SMSNotifier implements Notifier {
 
