@@ -6,14 +6,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EmailNotifier implements Notifier {
+public class SMSNotifier implements Notifier {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(EmailNotifier.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SMSNotifier.class);
 
     @Override
     public void notify(Client client, String message) {
-        LOGGER.info("Notifying client: [{}], by email: [{}], with message: [{}]",
-                client.getName(), client.getEmail(), message);
+        LOGGER.info("Notifying client: [{}], by sms to: [{}], with message: [{}]",
+                client.getName(), client.getPhone(), message);
     }
 
 }
