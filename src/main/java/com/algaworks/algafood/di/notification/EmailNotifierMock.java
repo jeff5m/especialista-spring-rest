@@ -6,16 +6,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-@Profile("prod")
+@Profile("dev")
 @NotifierType(PriorityLevel.NORMAL)
 @Component
-public class EmailNotifier implements Notifier {
+public class EmailNotifierMock implements Notifier {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(EmailNotifier.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(EmailNotifierMock.class);
 
     @Override
     public void notify(Client client, String message) {
-        LOGGER.info("Notifying client: [{}], by email: [{}], with message: [{}]",
+        LOGGER.info("MOCK: Notifying client: [{}], by email: [{}], with message: [{}]",
                 client.getName(), client.getEmail(), message);
     }
 
