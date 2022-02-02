@@ -3,10 +3,9 @@ package com.algaworks.algafood.di.notification;
 import com.algaworks.algafood.di.model.Client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Qualifier("regular")
+@NotifierType(PriorityLevel.URGENT)
 @Component
 public class SMSNotifier implements Notifier {
 
